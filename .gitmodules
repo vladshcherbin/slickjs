@@ -1,0 +1,3 @@
+[submodule "vendor"]
+	path = vendor
+	url = https://VladShcherbin@github.com/kenwheeler/slick
