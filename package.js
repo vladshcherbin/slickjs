@@ -1,22 +1,16 @@
 Package.describe({
   name: 'shcherbin:slickjs',
-  version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
-  documentation: 'README.md'
+  version: '1.4.1',
+  summary: 'Slick js skeleton wrapper for meteor. Create beautiful carousels and sliders with ease!',
+  git: 'https://github.com/VladShcherbin/slickjs',
+  documentation: 'readme.md'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.0.3.1');
-  api.addFiles('shcherbin:slickjs.js');
-});
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('shcherbin:slickjs');
-  api.addFiles('shcherbin:slickjs-tests.js');
+  api.versionsFrom('1.0.1');
+  api.use('jquery', 'client');
+  api.addFiles([
+    'vendor/slick/slick.js',
+    'vendor/slick/slick.css'
+  ], 'client');
 });
