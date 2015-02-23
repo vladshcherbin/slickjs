@@ -1,0 +1,137 @@
+// Default Variables
+$slider-img-width: 100% !default;
+$slider-img-max-width: $slider-img-width !default;
+$slick-dot-size: 10px !default;
+$slick-dot-color: #C3C3C3 !default;
+$slick-dot-color-active: darken($slick-dot-color, 45%) !default;
+$slick-dot-color-hover: darken($slick-dot-color, 45%) !default;
+$slick-arrow-font-size: 14px;
+$slick-prev-character: "\003c" !default;
+$slick-next-character: "\003e" !default;
+$slick-arrow-shift: 0px !default;
+$slick-arrow-color: white !default;
+$slick-arrow-bg-color: #676767 !default;
+$slick-arrow-bg-color-hover: #353535 !default;
+$slick-arrow-bg-width: 34px !default;
+$slick-arrow-bg-height: $slick-arrow-bg-width !default;
+
+// Slider
+.slick-slider {
+	margin-bottom: 35px;
+
+	img {
+		width: $slider-img-width;
+		max-width: $slider-img-max-width;
+	}
+}
+
+// Dots
+.slick-dots {
+	position: absolute;
+	bottom: -25px;
+	display: block;
+	width: 100%;
+	height: $slick-dot-size;
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin-bottom: 0;
+
+	li {
+		position: relative;
+		display: inline-block;
+		height: $slick-dot-size;
+		width: $slick-dot-size;
+		padding: 0;
+		margin: 0 7px;
+		cursor: pointer;
+
+		button {
+			display: block;
+			width: $slick-dot-size;
+			height: $slick-dot-size;
+			color: transparent;
+			background-color: $slick-dot-color;
+			outline: none;
+			padding: 0;
+			border: 0;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&:hover, &:focus {
+				background-color: $slick-dot-color-hover;
+			}
+		}
+
+		&.slick-active button {
+			background-color: $slick-dot-color-active;
+		}
+	}
+}
+
+// Arrows
+.slick-prev,
+.slick-next {
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: $slick-arrow-bg-width;
+	height: $slick-arrow-bg-height;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	line-height: 0;
+	color: transparent;
+	background-color: $slick-arrow-bg-color;
+	padding: 0;
+	margin: $slick-arrow-bg-height / 2 0 0 0;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	cursor: pointer;
+
+	&:hover, &:focus {
+		outline: none;
+		background-color: $slick-arrow-bg-color-hover;
+	}
+}
+
+.slick-prev:before, .slick-next:before {
+	display: block;
+	font-size: $slick-arrow-font-size;
+	line-height: 1;
+	color: $slick-arrow-color;
+}
+
+.slick-prev {
+	left: $slick-arrow-shift;
+
+	[dir="rtl"] & {
+		left: auto;
+		right: $slick-arrow-shift;
+	}
+
+	&:before {
+		content: $slick-prev-character;
+
+		[dir="rtl"] & {
+			content: $slick-next-character;
+		}
+	}
+}
+
+.slick-next {
+	right: $slick-arrow-shift;
+
+	[dir="rtl"] & {
+		left: $slick-arrow-shift;
+		right: auto;
+	}
+
+	&:before {
+		content: $slick-next-character;
+
+		[dir="rtl"] & {
+			content: $slick-prev-character;
+		}
+	}
+}
