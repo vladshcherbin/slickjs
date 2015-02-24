@@ -5,7 +5,7 @@ $slick-dot-size: 10px !default;
 $slick-dot-color: #C3C3C3 !default;
 $slick-dot-color-active: darken($slick-dot-color, 45%) !default;
 $slick-dot-color-hover: darken($slick-dot-color, 45%) !default;
-$slick-arrow-font-size: 14px;
+$slick-arrow-font-size: 14px !default;
 $slick-prev-character: "\003c" !default;
 $slick-next-character: "\003e" !default;
 $slick-arrow-shift: 0px !default;
@@ -17,12 +17,16 @@ $slick-arrow-bg-height: $slick-arrow-bg-width !default;
 
 // Slider
 .slick-slider {
-	margin-bottom: 35px;
+	margin: 0 5px 35px 5px;
 
 	img {
 		width: $slider-img-width;
 		max-width: $slider-img-max-width;
 	}
+}
+
+.slick-slide {
+	padding: 0 10px;
 }
 
 // Dots
@@ -83,7 +87,7 @@ $slick-arrow-bg-height: $slick-arrow-bg-width !default;
 	color: transparent;
 	background-color: $slick-arrow-bg-color;
 	padding: 0;
-	margin: $slick-arrow-bg-height / 2 0 0 0;
+	margin: -$slick-arrow-bg-height / 2 0 0 0;
 	border: none;
 	border-radius: 0;
 	outline: none;
