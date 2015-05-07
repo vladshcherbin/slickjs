@@ -13,7 +13,7 @@
 
 The package includes only core js file and core css file.
 
-After installing, you need to copy the theme from the **theme** folder to your project or use your own one.
+After installing, you need to copy one of the themes from the **theme** folder to your project or use your own one. The Slick theme uses some fonts, while the Custom one is pure css.
 
 ## Installation
 
