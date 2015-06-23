@@ -3,6 +3,7 @@
 **Table of contents**
 
 - [About](#about)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
@@ -11,9 +12,12 @@
 
 [Slick js](http://kenwheeler.github.io/slick) wrapper for [Meteor](http://meteor.com).
 
-The package includes only core js file and core css file.
+The package includes only core js file and core css file. You can use any theme you want.
 
-After installing, you need to copy one of the themes from the **theme** folder to your project or use your own one. The Slick theme uses some fonts, while the Custom one is pure css.
+## Demo
+[DEMO](http://slickjs-default-theme.meteor.com) - Slick JS Default Theme Demo
+
+[DEMO]() - Slick JS Custom Theme Demo
 
 ## Installation
 
@@ -21,43 +25,42 @@ After installing, you need to copy one of the themes from the **theme** folder t
 meteor add shcherbin:slickjs
 ```
 
+After installing, you need to copy one of the themes from the **themes** folder to your project or use your own one.
+
+To use the **default** one theme, you need to copy the `.gif` file and `fonts` directory to your public folder. You also need to copy the `slick-theme.css` file to you client directory (e.g. `client/styles`). You can check the **examples/slick-theme** folder to see, what it looks like.
+
 ## Usage
 
-You can view all available options on the [slick js website](http://kenwheeler.github.io/slick).
+You can view and use all available options from the [slick js website](http://kenwheeler.github.io/slick).
 
 ## Example
+
+In the **examples** directory you can find two examples, with the default theme and the custom one. Basically, what you need to do it to create a template and in a rendered callback to call `slick` with options.
 
 ### Spacebars templates
 
 ```html
-<template name="home">
-	<div class="container">
-		<div id="carousel">
-			{{#each photos}}
-				<div>{{> homePhoto}}</div>
-			{{/each}}
-		</div>
-	</div>
-</template>
-
-<template name="homePhoto">
-	<img src="img/photos/{{slug}}.jpg" alt="{{title}}">
+<template name="carousel">
+  <div id="carousel">
+    <div>
+      <img src="https://unsplash.it/500/300?image=0" align="image 0">
+    </div>
+    <div>
+      <img src="https://unsplash.it/500/300?image=1" align="image 1">
+    </div>
+    <div>
+      <img src="https://unsplash.it/500/300?image=2" align="image 2">
+    </div>
+  </div>
 </template>
 ```
 
 ### Client js file
 
 ```js
-Template.home.rendered = function () {
-	$('#carousel').slick({
-		dots: true,
-		arrows: true,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 2000,
-		speed: 500,
-		fade: true,
-		cssEase: 'linear'
-	});
-};
+Template.carousel.onRendered(function () {
+  this.$('#carousel').slick({
+    // options
+  });
+});
 ```
