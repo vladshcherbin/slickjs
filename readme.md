@@ -7,7 +7,7 @@
 - [Installation](#installation)
 - [Themes](#themes)
 - [Usage](#usage)
-- [Example](#example)
+- [Examples](#examples)
 
 ## About
 
@@ -42,7 +42,7 @@ The custom theme is very lightweight and is pure css. If you want to use it, jus
 
 You can view and use all available options from the [slick js website](http://kenwheeler.github.io/slick).
 
-## Example
+## Examples
 
 In the **examples** directory you can find two examples, with the default theme and the custom one. Basically, what you need to do it to create a template and in a rendered callback to call `slick` with options.
 
