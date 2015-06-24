@@ -5,13 +5,12 @@ $slick-dot-size: 10px !default;
 $slick-dot-color: #C3C3C3 !default;
 $slick-dot-color-active: darken($slick-dot-color, 45%) !default;
 $slick-dot-color-hover: darken($slick-dot-color, 45%) !default;
-$slick-arrow-font-size: 14px !default;
-$slick-prev-character: "\003c" !default;
-$slick-next-character: "\003e" !default;
+$slick-arrow-size: 8px;
+$slick-arrow-thickness: 2px;
 $slick-arrow-shift: 0px !default;
 $slick-arrow-color: white !default;
-$slick-arrow-bg-color: #676767 !default;
-$slick-arrow-bg-color-hover: #353535 !default;
+$slick-arrow-bg-color: rgba(0, 0, 0, .3) !default;
+$slick-arrow-bg-color-hover: rgba(0, 0, 0, .5) !default;
 $slick-arrow-bg-width: 34px !default;
 $slick-arrow-bg-height: $slick-arrow-bg-width !default;
 
@@ -81,8 +80,6 @@ $slick-arrow-bg-height: $slick-arrow-bg-width !default;
 	display: block;
 	width: $slick-arrow-bg-width;
 	height: $slick-arrow-bg-height;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 400;
 	line-height: 0;
 	color: transparent;
 	background-color: $slick-arrow-bg-color;
@@ -100,42 +97,30 @@ $slick-arrow-bg-height: $slick-arrow-bg-width !default;
 }
 
 .slick-prev:before, .slick-next:before {
+	content: '';
 	display: block;
-	font-size: $slick-arrow-font-size;
-	line-height: 1;
-	color: $slick-arrow-color;
+	position: relative;
+	width: $slick-arrow-size;
+	height: $slick-arrow-size;
+	border-top: $slick-arrow-thickness solid $slick-arrow-color;
+	border-right: $slick-arrow-thickness solid $slick-arrow-color;
+	margin: 0 auto;
 }
 
 .slick-prev {
 	left: $slick-arrow-shift;
 
-	[dir="rtl"] & {
-		left: auto;
-		right: $slick-arrow-shift;
-	}
-
 	&:before {
-		content: $slick-prev-character;
-
-		[dir="rtl"] & {
-			content: $slick-next-character;
-		}
+		left: $slick-arrow-thickness;
+		transform: rotate(225deg);
 	}
 }
 
 .slick-next {
 	right: $slick-arrow-shift;
 
-	[dir="rtl"] & {
-		left: $slick-arrow-shift;
-		right: auto;
-	}
-
 	&:before {
-		content: $slick-next-character;
-
-		[dir="rtl"] & {
-			content: $slick-prev-character;
-		}
+		right: $slick-arrow-thickness;
+		transform: rotate(45deg);
 	}
 }

@@ -54,17 +54,16 @@
 	background-color: #505050;
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
 	position: absolute;
 	top: 50%;
 	display: block;
 	width: 34px;
 	height: 34px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 400;
 	line-height: 0;
 	color: transparent;
-	background-color: #676767;
+	background-color: rgba(0, 0, 0, 0.3);
 	padding: 0;
 	margin: -17px 0 0 0;
 	border: none;
@@ -73,48 +72,42 @@
 	cursor: pointer;
 }
 
-.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover, .slick-next:focus {
 	outline: none;
-	background-color: #353535;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .slick-prev:before, .slick-next:before {
+	content: '';
 	display: block;
-	font-size: 14px;
-	line-height: 1;
-	color: white;
+	position: relative;
+	width: 8px;
+	height: 8px;
+	border-top: 2px solid white;
+	border-right: 2px solid white;
+	margin: 0 auto;
 }
 
 .slick-prev {
 	left: 0px;
 }
 
-[dir="rtl"] .slick-prev {
-	left: auto;
-	right: 0px;
-}
-
 .slick-prev:before {
-	content: "\003c";
-}
-
-[dir="rtl"] .slick-prev:before {
-	content: "\003e";
+	left: 2px;
+	-webkit-transform: rotate(225deg);
+	-ms-transform: rotate(225deg);
+	transform: rotate(225deg);
 }
 
 .slick-next {
 	right: 0px;
 }
 
-[dir="rtl"] .slick-next {
-	left: 0px;
-	right: auto;
-}
-
 .slick-next:before {
-	content: "\003e";
-}
-
-[dir="rtl"] .slick-next:before {
-	content: "\003c";
+	right: 2px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
