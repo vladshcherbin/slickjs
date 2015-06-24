@@ -52,13 +52,13 @@ In the **examples** directory you can find two examples, with the default theme 
 <template name="carousel">
   <div id="carousel">
     <div>
-      <img src="https://unsplash.it/500/300?image=0" align="image 0">
+      <img src="https://unsplash.it/500/300?image=0" alt="image 0">
     </div>
     <div>
-      <img src="https://unsplash.it/500/300?image=1" align="image 1">
+      <img src="https://unsplash.it/500/300?image=1" alt="image 1">
     </div>
     <div>
-      <img src="https://unsplash.it/500/300?image=2" align="image 2">
+      <img src="https://unsplash.it/500/300?image=2" alt="image 2">
     </div>
   </div>
 </template>
