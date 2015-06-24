@@ -11,16 +11,15 @@ body {
 body h1 {
   text-align: center;
   color: #353535;
-}
-
-#carousel, #carousel-multiple {
-  margin: 0 auto 15px auto;
+  margin-bottom: 35px;
 }
 
 #carousel {
   width: 500px;
+  margin: 0 auto 35px auto;
 }
 
 #carousel-multiple {
   width: 600px;
+  margin: 0 auto 15px auto;
 }
