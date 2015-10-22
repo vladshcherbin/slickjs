@@ -1,7 +1,7 @@
 Package.describe({
   name: 'shcherbin:slickjs',
   version: '1.5.8',
-  summary: 'Slick js skeleton wrapper for meteor. Create beautiful carousels and sliders with ease!',
+  summary: 'Slick js skeleton wrapper for meteor. Beautiful carousel or slider for you!',
   git: 'https://github.com/VladShcherbin/slickjs',
   documentation: 'readme.md'
 });
